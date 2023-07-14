@@ -19,7 +19,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: $('#message').val(),
-      roomname: 'test',
+      roomname: RoomsView.$select.val(),
     }
 
     Parse.create(message, function() {console.log('Success!')}, function() {console.log('Failed')});
