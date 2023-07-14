@@ -12,10 +12,21 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
+    for (var i = 0; i < Messages._data.length; i++) {
+      MessagesView.renderMessage(Messages._data[i]);
+
+    }
+
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    var $message = $(MessageView.render(message));
+    $('.username').text(message.username);
+    $('.text').text(message.text);
+    $message.appendTo(MessagesView.$chats[0]);
+    // console.log(MessagesView.$chats[0]);
+    console.log($message);
   },
 
   handleClick: function(event) {
