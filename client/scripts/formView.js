@@ -19,12 +19,16 @@ var FormView = {
     var message = {
       username: App.username,
       text: $('#message').val(),
-      roomname: RoomsView.$select.val(),
+      roomname: Rooms._currentSelected,
     }
 
     Parse.create(message, function() {console.log('Success!')}, function() {console.log('Failed')});
 
     console.log('click!');
+    App.startSpinner();
+    App.fetch();
+    App.stopSpinner();
+
   },
 
   setStatus: function(active) {

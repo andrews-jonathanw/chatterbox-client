@@ -15,10 +15,14 @@ var Messages = {
     for (var i = 0; i < data.length; i++) {
        Messages._data.push(data[i]);
     }
-    console.log(Messages._data);
+    //console.log(Messages._data);
   },
 
   // addTo: function(data, cb) {
   //   Messages.retrieve(data, cb)
   // };
+
+  get: function() {
+    return Messages._data;
+  }
 };

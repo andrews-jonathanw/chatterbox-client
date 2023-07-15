@@ -14,26 +14,38 @@ var RoomsView = {
     RoomsView.handleClick();
     // RoomsView.$select.change(function() {
 
+    RoomsView.$select.change(function() {
+      Rooms.markRoom(RoomsView.$select.val());
+
+    });
     // });
     // $( "#other" ).on( "click", function() {
     //   $( ".target" ).trigger( "change" );
     // } );
+    RoomsView.$button.on('click', function() {
+      //console.log('clicked!!!');
+      RoomsView.namePrompt();
+    });
   },
 
   render: function() {
     // TODO: Render out the list of rooms.
     // iterate over the rooms array
-    for (var i = 0; i < Rooms._data.length; i++) {
-      RoomsView.renderRoom(Rooms._data[i]);
+    RoomsView.$select.html('');
+    var roomName = Rooms._currentSelected;
+    RoomsView.$select.append(`<option value = "">${roomName}</option>`);
+    var rooms = Rooms.refresh();
+    for (var i = 0; i < rooms.length; i++) {
+      if (roomName !== rooms[i]) {
+        RoomsView.renderRoom(rooms[i]);
+      }
     }
   },
 
-  renderRoom: function(roomname) {
-    // TODO: Render out a single room.
-    //iterate through _data.room
-
-    // var roomOption = $('<option>').val(room)
+  renderRoom: function(roomName) {
+    RoomsView.$select.append(`<option>${roomName}</option>`)
   },
+
 
   handleChange: function(event) {
     // TODO: Handle a user selecting a different room.
@@ -50,6 +62,12 @@ var RoomsView = {
     // RoomsView.$option.on('click', function() {
     //   RoomsView.renderRoom($option.val());
     // })
-  }
+  },
 
+  namePrompt: function(input) {
+    var input = prompt('Add a Room Name');
+    Rooms.add(input);
+    RoomsView.render();
+    MessagesView.render();
+  }
 };

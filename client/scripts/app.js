@@ -22,9 +22,11 @@ var App = {
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
     setInterval(function() {
-      App.startSpinner();
-      App.fetch(App.stopSpinner());
-    },10000)
+      //App.startSpinner();
+      App.fetch();
+      //App.stopSpinner();
+    },3000)
+
   },
 
   fetch: function(callback = ()=>{}) {
@@ -34,7 +36,7 @@ var App = {
 
       // TODO: Use the data to update Messages and Rooms
       Messages.retrieve(data);
-
+      Rooms.createRoom();
       // and re-render the corresponding views.
       MessagesView.render();
       RoomsView.render();
