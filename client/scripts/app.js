@@ -25,7 +25,7 @@ var App = {
       //App.startSpinner();
       App.fetch();
       //App.stopSpinner();
-    },3000)
+    }, 3000);
 
   },
 

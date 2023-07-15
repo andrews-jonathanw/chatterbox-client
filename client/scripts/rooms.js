@@ -42,8 +42,8 @@ var Rooms = {
 
   add: function(name) {
     if (Rooms._data.includes(name)) {
-      prompt("This Room Already Exists.");
-    }else {
+      prompt('This Room Already Exists.');
+    } else {
       Rooms._data.push(name);
       // console.log(Rooms._data);
       Rooms.markRoom(name);

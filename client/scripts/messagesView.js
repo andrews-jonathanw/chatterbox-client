@@ -13,7 +13,7 @@ var MessagesView = {
     // MessagesView.handleClick();
     // console.log($('#chats .chat .username').val());
     MessagesView.$chats.on('click', '.username', MessagesView.handleClick);
-      //MessagesView.handleClick();
+    //MessagesView.handleClick();
   },
 
   render: function() {
@@ -49,7 +49,7 @@ var MessagesView = {
     // console.log($message);
     if (Friends._data.includes(message.username)) {
       $message.addClass('friend');
-    };
+    }
   },
 
   handleClick: function(event) {

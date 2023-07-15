@@ -20,9 +20,9 @@ var FormView = {
       username: App.username,
       text: $('#message').val(),
       roomname: Rooms._currentSelected,
-    }
+    };
 
-    Parse.create(message, function() {console.log('Success!')}, function() {console.log('Failed')});
+    Parse.create(message, function() { console.log('Success!'); }, function() { console.log('Failed'); });
 
     console.log('click!');
     App.startSpinner();

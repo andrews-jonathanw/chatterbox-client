@@ -12,7 +12,7 @@ var Friends = {
   toggleStatus: function(name) {
     if (!Friends._data.includes(name) && name !== 'anonymous') {
       Friends._data.push(name);
-      console.log(Friends._data)
+      console.log(Friends._data);
     }
   },
 };

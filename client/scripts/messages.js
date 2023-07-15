@@ -13,7 +13,7 @@ var Messages = {
   retrieve: function(data, cb) {
     Messages._data = [];
     for (var i = 0; i < data.length; i++) {
-       Messages._data.push(data[i]);
+      Messages._data.push(data[i]);
     }
     //console.log(Messages._data);
   },
